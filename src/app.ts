@@ -1,4 +1,4 @@
-import Express, { Application } from 'express'
+import Express, { Application, Request, Response } from 'express'
 import cors from 'cors'
 import { BicycleRoutes } from './module/bicycle/bicycle.route'
 
@@ -11,5 +11,9 @@ app.use(cors())
 // Routes
 app.use('/api/products', BicycleRoutes)
 app.use('/api/products/:productId', BicycleRoutes)
+
+app.get('/', (req: Request, res: Response) => {
+  res.send('Bicycle Server is running!')
+})
 
 export default app

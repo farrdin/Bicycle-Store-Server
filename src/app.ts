@@ -12,6 +12,7 @@ app.use(cors())
 app.use('/api/products', BicycleRoutes)
 app.use('/api/products/:productId', BicycleRoutes)
 
+// APP Run
 app.get('/', (req: Request, res: Response) => {
   res.send('Bicycle Server is running!')
 })

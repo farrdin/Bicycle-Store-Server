@@ -1,6 +1,7 @@
 import Express, { Application, Request, Response } from 'express'
 import cors from 'cors'
-import { BicycleRoutes } from './module/bicycle/bicycle.route'
+import ProductRouter from './module/product/product.route'
+import OrderRouter from './module/order/order.route'
 
 const app: Application = Express()
 
@@ -9,8 +10,8 @@ app.use(Express.json())
 app.use(cors())
 
 // Routes
-app.use('/api/products', BicycleRoutes)
-app.use('/api/products/:productId', BicycleRoutes)
+app.use('/api/products', ProductRouter)
+app.use('/api/orders', OrderRouter)
 
 // APP Run
 app.get('/', (req: Request, res: Response) => {

@@ -1,4 +1,4 @@
-export interface IBicycle {
+export interface IProduct {
   name: string
   brand: string
   price: number

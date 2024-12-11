@@ -14,10 +14,10 @@ app.use(cors())
 app.use('/api/products', ProductRouter)
 app.use('/api/orders', OrderRouter)
 
-app.use(notFound)
 // APP Run
 app.get('/', (req: Request, res: Response) => {
   res.send('Bicycle Server is running!')
 })
 
+app.use(notFound)
 export default app

@@ -2,6 +2,7 @@ import Express, { Application, Request, Response } from 'express'
 import cors from 'cors'
 import ProductRouter from './module/product/product.route'
 import OrderRouter from './module/order/order.route'
+import notFound from './middlewares/notFound'
 
 const app: Application = Express()
 
@@ -13,6 +14,7 @@ app.use(cors())
 app.use('/api/products', ProductRouter)
 app.use('/api/orders', OrderRouter)
 
+app.use(notFound)
 // APP Run
 app.get('/', (req: Request, res: Response) => {
   res.send('Bicycle Server is running!')

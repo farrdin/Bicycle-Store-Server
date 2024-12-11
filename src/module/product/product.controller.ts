@@ -101,7 +101,7 @@ const deleteProduct = async (req: Request, res: Response) => {
   } catch (error: unknown) {
     const err = error as mongoose.Error.ValidationError
     res.json({
-      message: 'Failed to delete bicycles',
+      message: 'Failed to delete bicycle',
       success: false,
       error: err.errors || error,
       stack: err.stack,
